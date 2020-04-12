@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue-2.5.9.js"></script>
+    <style>
+    [v-cloak]{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 第一种插值表达式最常用，但是有闪烁问题。 -->
+
+        <!-- 加一个v-cloak来解决闪烁问题 -->
+        <h3 v-cloak>----{{msg}}-------</h3>  <!-- 插值表达式只会插入内容，并不会清空原有的内容 -->
+        <hr>
+        <h4 v-text="msg">1221321</h4>    <!--他会替换掉元素中的所有内容 -->
+        <hr>
+
+        <!-- 这两种都原样输出， -->
+        <div>{{msg2}}</div>
+        <div v-text="msg2"></div>
+        <!-- 能够识别标签 -->
+        <div v-html="msg2"></div>
+    </div>
+
+    <script>
+    const vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'魏国人都不会亚洲蹲',
+            msg2:'<h9>这是一个小标题</h9>'
+
+        }
+    })
+    </script>
+</body>
+</html>

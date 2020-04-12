@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="按钮" v-bind:title="btnTitle">
+        <hr>
+<!--  -->
+        <input type="button" value="按钮" :title="btnTitle" :id=" cuetoma+'追加内容'" >
+        <!--v-bind： 可以简化为：  效果是一样的-->
+        <!--v-bind：中拼接内容一定要+'加的内容'   才可以拼接-->
+    </div>
+
+
+
+    <script>
+    const vm =new Vue({
+        el:'#app',
+        data:{
+            btnTitle:'这是按钮的自定义title值',
+            cuetoma:'说要加的内容'
+        }
+
+    })
+    </script>
+</body>
+</html>
